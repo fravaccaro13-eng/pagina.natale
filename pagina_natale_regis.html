@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Buone feste!</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --accent: #c8102e; /* rosso natalizio */
+      --green: #006b3f;  /* verde natalizio */
+      --gold: #c9a227;   /* dorato */
+    }
+    html, body {
+      height: 100%;
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+    }
+    .wrap {
+      min-height: 100%;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+    .card {
+      max-width: 800px;
+      width: 100%;
+      text-align: center;
+      padding: 40px 28px;
+      border-radius: 16px;
+      position: relative;
+      box-shadow: 0 6px 24px rgba(0,0,0,.08);
+      background: #fff;
+      overflow: hidden;
+    }
+    h1 {
+      font-size: clamp(28px, 4vw, 40px);
+      margin: 0 0 12px 0;
+      color: var(--accent);
+    }
+    p.msg {
+      font-size: clamp(18px, 2.6vw, 24px);
+      line-height: 1.5;
+      margin: 0 0 8px 0;
+    }
+    .sub {
+      font-size: clamp(16px, 2.4vw, 20px);
+      color: #444;
+      margin-top: 4px;
+    }
+    .garland {
+      position: absolute;
+      top: -20px;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 24px;
+      font-size: clamp(18px, 3vw, 28px);
+    }
+    .garland span { filter: drop-shadow(0 2px 2px rgba(0,0,0,.15)); }
+
+    /* neve semplice */
+    .snow { position: absolute; inset: 0; pointer-events: none; }
+    .flake {
+      position: absolute;
+      color: #88a;
+      opacity: .6;
+      animation: fall linear infinite;
+    }
+    @keyframes fall {
+      to { transform: translateY(120vh) rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card" role="region" aria-label="Messaggio di festa">
+      <div class="garland" aria-hidden="true">
+        <span>🎄</span><span>✨</span><span>🎁</span><span>❄️</span><span>⭐</span><span>🕯️</span>
+      </div>
+      <h1>Buone feste!</h1>
+      <p class="msg"><strong>Il link per tua fortuna non funziona...</strong></p>
+      <p class="msg">Regalati un Natale senza <strong>ReGiS</strong>!</p>
+      <p class="sub">🎄 ✨ 🎁 ❄️ ⭐</p>
+      <div class="snow" aria-hidden="true">
+        <!-- generiamo qualche fiocco di neve con spans -->
+        <span class="flake" style="left:5%; font-size:18px; animation-duration:9s;">✽</span>
+        <span class="flake" style="left:15%; font-size:14px; animation-duration:12s; animation-delay:1s;">✻</span>
+        <span class="flake" style="left:28%; font-size:22px; animation-duration:11s; animation-delay:.5s;">✼</span>
+        <span class="flake" style="left:40%; font-size:16px; animation-duration:10s; animation-delay:1.2s;">✽</span>
+        <span class="flake" style="left:52%; font-size:20px; animation-duration:13s; animation-delay:.8s;">✻</span>
+        <span class="flake" style="left:65%; font-size:18px; animation-duration:9.5s; animation-delay:.3s;">✼</span>
+        <span class="flake" style="left:78%; font-size:24px; animation-duration:12.5s; animation-delay:1.1s;">✽</span>
+        <span class="flake" style="left:90%; font-size:15px; animation-duration:10.5s; animation-delay:.7s;">✻</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
